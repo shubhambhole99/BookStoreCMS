@@ -31,6 +31,13 @@ export const signInWithCredentials = async (
     if (result?.error) {
       return { success: false, error: result.error };
     }
+    await workflowClient.trigger({
+      url: `${config.env.prodApiEndpoint}/api/workflows/onboarding`,
+      body: {
+        email,
+        "Hello"
+      },
+    });
 
     return { success: true };
   } catch (error) {
