@@ -35,7 +35,7 @@ export const signInWithCredentials = async (
       url: `${config.env.prodApiEndpoint}/api/workflows/onboarding`,
       body: {
         email,
-        "Hello"
+        fullName:"Hello",
       },
     });
 
